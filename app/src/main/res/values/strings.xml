@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Caixa de Sugestoes</string>
+    <string-array name="cursos">
+        <item>Desenvolvimento de Sistemas</item>
+        <item>Administração</item>
+        <item>Logística</item>
+    </string-array>
+    <string-array name="tipos">
+        <item>Sugestão</item>
+        <item>Elogio</item>
+        <item>Comentário</item>
+        <item>Reclamação</item>
+    </string-array>
+</resources>
