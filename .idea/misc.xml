@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/botao_redondo.xml" value="0.39436619718309857" />
+        <entry key="app/src/main/res/drawable/fundo_form.xml" value="0.4083333333333333" />
         <entry key="app/src/main/res/drawable/fundo_main_card.xml" value="0.346875" />
+        <entry key="app/src/main/res/drawable/ic_sugestao_feminina.xml" value="0.346875" />
+        <entry key="app/src/main/res/drawable/ic_suggestion.xml" value="0.346875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3307291666666667" />
-        <entry key="app/src/main/res/layout/activity_sugestao_list.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/activity_sugestao_list.xml" value="0.3307291666666667" />
+        <entry key="app/src/main/res/layout/formulario.xml" value="0.5" />
         <entry key="app/src/main/res/layout/sugestao_item.xml" value="0.375" />
       </map>
     </option>

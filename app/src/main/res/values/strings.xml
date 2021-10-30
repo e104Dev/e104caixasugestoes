@@ -11,4 +11,9 @@
         <item>Comentário</item>
         <item>Reclamação</item>
     </string-array>
+
+    <string-array name="sabor_esfiha">
+        <item>"Carne Seca Foverver</item>
+        <item>Baianinha Super Apimentada</item>
+    </string-array>
 </resources>

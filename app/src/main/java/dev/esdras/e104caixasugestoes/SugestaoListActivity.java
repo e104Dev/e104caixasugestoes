@@ -16,9 +16,12 @@ public class SugestaoListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sugestao_list);
 
-        SugestaoAdapter sugestaoAdapter = new SugestaoAdapter(SugestaoDataSource.obterSugestoes);
+        //TODO: Receber os dados do Web000Host
+
+        SugestaoAdapter sugestaoAdapter = new SugestaoAdapter(SugestaoDataSource.sugestoes);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewSugestoes);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(sugestaoAdapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
     }
 }
