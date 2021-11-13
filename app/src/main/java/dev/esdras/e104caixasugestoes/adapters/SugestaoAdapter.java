@@ -31,7 +31,7 @@ public class SugestaoAdapter extends RecyclerView.Adapter<SugestaoViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull SugestaoViewHolder holder, int position) {
         Sugestao sugestao = sugestoes.get(position);
-        holder.imageViewTipo.setImageResource(sugestao.idRecurso);
+        holder.imageViewTipo.setImageResource(sugestao.toResourceId(sugestao.tipo));
         holder.textViewCurso.setText(sugestao.curso);
         holder.textViewTipo.setText(sugestao.tipo);
         holder.textViewConteudo.setText(sugestao.conteudo);
