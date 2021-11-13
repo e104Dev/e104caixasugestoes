@@ -1,15 +1,17 @@
 <resources>
     <string name="app_name">Caixa de Sugestoes</string>
+    <string name="titulo_alerta_carregamento">Carregando</string>
+    <string name="mensagem_carregamento">Carregando sugestões, por favor aguarde...</string>
     <string-array name="cursos">
-        <item>Desenvolvimento de Sistemas</item>
-        <item>Administração</item>
-        <item>Logística</item>
+        <item>Sistemas</item>
+        <item>Administracao</item>
+        <item>Logistica</item>
     </string-array>
     <string-array name="tipos">
-        <item>Sugestão</item>
+        <item>Sugestao</item>
         <item>Elogio</item>
-        <item>Comentário</item>
-        <item>Reclamação</item>
+        <item>Comentario</item>
+        <item>Reclamacao</item>
     </string-array>
 
     <string-array name="sabor_esfiha">
