@@ -39,4 +39,14 @@ public class Sugestao {
 
         return map.get(tipo);
     }
+
+    public String toUtf8(String tipo) {
+        Map<String, String> map = new HashMap<>();
+        map.put("sugestao", "Sugestão");
+        map.put("elogio","Elogio");
+        map.put("reclamacao", "Reclamação");
+        map.put("comentario", "Comentário");
+
+        return map.get(tipo);
+    }
 }

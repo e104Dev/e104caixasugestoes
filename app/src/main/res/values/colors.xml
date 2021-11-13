@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="laranja_200">#FFAB91</color>
+    <color name="background_laranja_200">#38FFAB91</color>
+    <color name="laranja_500">#FF5722</color>
+    <color name="laranja_700">#E64A19</color>
+    <color name="azul_200">#81D4FA</color>
+    <color name="azul_700">#0288D1</color>
 </resources>

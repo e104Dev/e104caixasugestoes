@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         String nome = editTextNome.getText().toString();
 
         //TODO: Validar a entrada de dados, nao permitindo envio de sugestões não preenchidas
-        if(conteudo.isEmpty() || conteudo.equals("")) {
+        if(conteudo.isEmpty()) {
             Toast.makeText(getApplicationContext(), "O conteúdo é obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -97,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
         enviarRequisicao(nome, conteudo);
 
         //TODO: Abrir a tela com as sugestões
+        Intent intent = new Intent(this, SugestaoListActivity.class);
+        startActivity(intent);
+    }
+
+    public void visualizarSugestoes(View view) {
         Intent intent = new Intent(this, SugestaoListActivity.class);
         startActivity(intent);
     }
@@ -123,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             // Fechar alerta ao concluir a requisição
             alertDialog.dismiss();
         }, error -> {
+            alertDialog.dismiss();
             Toast.makeText(getApplicationContext(), "Erro ao enviar requisição", Toast.LENGTH_SHORT).show();
         }){
             // Adequação dos dados utilizando o $_POST do PHP para recepção dos dados.

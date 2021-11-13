@@ -13,7 +13,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dev.esdras.e104caixasugestoes.R;
 import dev.esdras.e104caixasugestoes.model.Sugestao;
@@ -21,6 +24,9 @@ import dev.esdras.e104caixasugestoes.model.Sugestao;
 public class SugestaoAdapter extends RecyclerView.Adapter<SugestaoViewHolder> {
 
     List<Sugestao> sugestoes;
+    static Map<String, String> map = new HashMap<>();
+
+    List<String> tipo = Arrays.asList("Sugestão", "Elogio", "Comentário", "Reclamação");
 
     public SugestaoAdapter(List<Sugestao> sugestoes) {
         this.sugestoes = sugestoes;
@@ -40,7 +46,7 @@ public class SugestaoAdapter extends RecyclerView.Adapter<SugestaoViewHolder> {
         Sugestao sugestao = sugestoes.get(position);
         holder.imageViewTipo.setImageResource(sugestao.toResourceId(sugestao.tipo));
         holder.textViewCurso.setText(sugestao.curso);
-        holder.textViewTipo.setText(sugestao.tipo);
+        holder.textViewTipo.setText(sugestao.toUtf8(sugestao.tipo));
         holder.textViewConteudo.setText(sugestao.conteudo);
         holder.textViewNome.setText(sugestao.aluno);
 
