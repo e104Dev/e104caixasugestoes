@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/logo" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextSugestao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -67,35 +67,38 @@
             android:ems="10"
             android:hint="Nos ajude com sua opinião"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/spinnerCurso"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:entries="@array/cursos"
-            app:layout_constraintEnd_toStartOf="@+id/spinner4"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/spinnerTipo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextSugestao" />
 
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/spinnerTipo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:entries="@array/tipos"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/spinner3"
-            app:layout_constraintTop_toTopOf="@+id/spinner3" />
+            app:layout_constraintStart_toEndOf="@+id/spinnerCurso"
+            app:layout_constraintTop_toTopOf="@+id/spinnerCurso" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextNome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -104,12 +107,13 @@
             android:ems="10"
             android:hint="Seu nome, mas não é obrigatório"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCurso" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonEnviar"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="16dp"
