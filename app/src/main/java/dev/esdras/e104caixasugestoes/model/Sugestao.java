@@ -9,6 +9,7 @@ import dev.esdras.e104caixasugestoes.R;
 
 public class Sugestao {
 
+    public Long id;
     public String tipo;
     public String conteudo;
     public String curso;
@@ -16,15 +17,12 @@ public class Sugestao {
     public String aluno;
     @JsonProperty("data-hora")
     public String data;
-    public int idRecurso;
 
-    public Sugestao(String tipo, String conteudo, String curso, String aluno, String data) {
+    public Sugestao(String tipo, String conteudo, String curso, String aluno) {
         this.tipo = tipo;
         this.conteudo = conteudo;
         this.curso = curso;
         this.aluno = aluno;
-        this.data = data;
-        this.idRecurso = toResourceId(tipo);
     }
 
     public Sugestao() {

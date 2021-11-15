@@ -52,7 +52,7 @@ public class SugestaoAdapter extends RecyclerView.Adapter<SugestaoViewHolder> {
 
         // Formatar a data recebida do banco de dados do padrão 2021-11-12 10:30:59 para 12/11/2021
         String dataFormatada = LocalDate.parse(sugestao.data,
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
                 .format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
         holder.textViewData.setText(dataFormatada);

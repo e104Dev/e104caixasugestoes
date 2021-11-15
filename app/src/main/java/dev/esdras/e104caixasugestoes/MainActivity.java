@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -18,15 +19,25 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dev.esdras.e104caixasugestoes.model.Sugestao;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     //TODO: Declarar os objetos de interação
     EditText editTextSugesto, editTextNome;
@@ -82,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
      * Orquestrador para validação de dados de entrada, envio de requisição e abertura da tela de sugestões.
      * @param view View - Classe de vículo entre view e controller
      */
-    public void abrirSugestoes(View view) {
+    public void abrirSugestoes(View view) throws JsonProcessingException, JSONException {
         //TODO: Capturar os dados do formulário
         String conteudo = editTextSugesto.getText().toString();
         String nome = editTextNome.getText().toString();
@@ -111,11 +122,11 @@ public class MainActivity extends AppCompatActivity {
      * @param nome String - Nome do usuário
      * @param conteudo String - Conteúdo da sugestão
      */
-    private void enviarRequisicao(String nome, String conteudo) {
+    private void enviarRequisicao(String nome, String conteudo) throws JsonProcessingException, JSONException {
         RequestQueue queue = Volley.newRequestQueue(this);
 
         // URL de seu script para inclusão em banco de dados
-        String url = "SEU SCRIPT INSERT AQUI";
+        String url = "https://e104caixasugestoes.herokuapp.com/api/v1/sugestao";
 
         AlertDialog alertDialog = new AlertDialog.Builder(this)
                 .setTitle("Aguarde")
@@ -123,26 +134,17 @@ public class MainActivity extends AppCompatActivity {
                 .create();
         alertDialog.show();
 
+        Sugestao sugestao = new Sugestao(tipo,conteudo,curso,nome);
+        JSONObject jsonObject = new JSONObject(new ObjectMapper().writeValueAsString(sugestao));
+
         //Criação de requisição do Volley API
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url, response -> {
-            // Fechar alerta ao concluir a requisição
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, jsonObject, response -> {
             alertDialog.dismiss();
         }, error -> {
             alertDialog.dismiss();
-            Toast.makeText(getApplicationContext(), "Erro ao enviar requisição", Toast.LENGTH_SHORT).show();
-        }){
-            // Adequação dos dados utilizando o $_POST do PHP para recepção dos dados.
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("curso",curso);
-                params.put("tipo",tipo);
-                params.put("nome",nome);
-                params.put("conteudo",conteudo);
-                return params;
-            }
-        };
+            Toast.makeText(getApplicationContext(), "Erro ao gravar novo registro.", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Erro ao enviar requisição POST", error);
+        });
 
         // A dicionar requisição à fila pára gerenciamento do Volley API
         queue.add(postRequest);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Tema claro -->
     <color name="purple_200">#F48FB1</color>
     <color name="purple_500">#E91E63</color>
     <color name="purple_700">#C2185B</color>
@@ -8,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
+    <!-- Tema escuro -->
     <color name="laranja_200">#FFAB91</color>
     <color name="background_laranja_200">#38FFAB91</color>
     <color name="laranja_500">#FF5722</color>

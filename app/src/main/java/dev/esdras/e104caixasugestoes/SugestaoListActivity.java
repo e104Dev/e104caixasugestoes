@@ -50,7 +50,7 @@ public class SugestaoListActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         // Neste trecho você irá adicionar a url que realiza a consulta ao banco gerando o JSON.
-        String url = "COLOQUE AQUI SUA URL";
+        String url = "https://e104caixasugestoes.herokuapp.com/api/v1/sugestoes";
 
         // Criação da requisição utilizando a API Volley
         StringRequest request = new StringRequest(Request.Method.GET, url, response -> {
