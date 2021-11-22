@@ -24,9 +24,6 @@ import dev.esdras.e104caixasugestoes.model.Sugestao;
 public class SugestaoAdapter extends RecyclerView.Adapter<SugestaoViewHolder> {
 
     List<Sugestao> sugestoes;
-    static Map<String, String> map = new HashMap<>();
-
-    List<String> tipo = Arrays.asList("Sugestão", "Elogio", "Comentário", "Reclamação");
 
     public SugestaoAdapter(List<Sugestao> sugestoes) {
         this.sugestoes = sugestoes;

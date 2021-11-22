@@ -16,4 +16,12 @@
     <color name="laranja_700">#E64A19</color>
     <color name="azul_200">#81D4FA</color>
     <color name="azul_700">#0288D1</color>
+
+    <!-- POSTIT -->
+    <color name="laranja">#ffd938</color>
+    <color name="verde">#e7f150</color>
+    <color name="azul">#1dace6</color>
+    <color name="rosa">#fd4db0</color>
+
+    <color name="texto_postit">#99121212</color>
 </resources>

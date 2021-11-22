@@ -1,4 +1,4 @@
-package dev.esdras.e104caixasugestoes;
+package dev.esdras.e104caixasugestoes.views;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import dev.esdras.e104caixasugestoes.R;
 import dev.esdras.e104caixasugestoes.adapters.SugestaoAdapter;
 import dev.esdras.e104caixasugestoes.model.Sugestao;
 

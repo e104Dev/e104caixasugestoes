@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Caixa de Sugestoes</string>
+    <string name="app_name">ANTBox</string>
     <string name="titulo_alerta_carregamento">Carregando</string>
     <string name="mensagem_carregamento">Carregando sugestões, por favor aguarde...</string>
     <string-array name="cursos">
@@ -14,8 +14,10 @@
         <item>Reclamacao</item>
     </string-array>
 
-    <string-array name="sabor_esfiha">
-        <item>"Carne Seca Foverver</item>
-        <item>Baianinha Super Apimentada</item>
+    <string-array name="categorias">
+        <item>DIVERSÃO</item>
+        <item>LAZER</item>
+        <item>TCC</item>
+        <item>TRABALHO</item>
     </string-array>
 </resources>

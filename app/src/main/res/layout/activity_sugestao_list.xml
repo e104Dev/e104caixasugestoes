@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SugestaoListActivity">
+    tools:context=".views.SugestaoListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSugestoes"

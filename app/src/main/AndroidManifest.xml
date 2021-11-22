@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.esdras.e104caixasugestoes">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.E104CaixaSugestoes">
         <activity
-            android:name=".SugestaoListActivity"
+            android:name=".views.AnotacaoActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.SugestaoActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.SugestaoListActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+            android:parentActivityName=".views.SugestaoActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
